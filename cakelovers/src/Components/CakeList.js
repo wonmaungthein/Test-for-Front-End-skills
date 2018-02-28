@@ -21,7 +21,6 @@ class CakeList extends React.Component {
                     <h3> {CakeNames.two}</h3>
                     <img src={chocolate} width="150" height="150" alt="cake" />
                     <button> Add this cake </button>
-
                 </div>
             </div>
         )
