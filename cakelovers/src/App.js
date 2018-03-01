@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CakeList from './Components/CakeList';
 
+
 class App extends Component {
   render() {
     return (
@@ -12,8 +13,8 @@ class App extends Component {
           <h1 className="App-title">We are cake lovers</h1>
         </header>
         <p className="App-intro">
-          <CakeList />        
-          </p>
+          <CakeList />
+        </p>
       </div>
     );
   }
