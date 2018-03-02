@@ -16,24 +16,22 @@ const Cakes = [
 
 ]
 
-
 class CakeList extends React.Component {
-    state = {
-        favouriteCake: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            favouriteCake: [,]
+        }
     }
 
-
     handlefavouritecake = (e) => {
-
         e.preventDefault();
         const listOfFavouriteCake = this.state.favouriteCake.push(e.target.value);
         // this.setState({
         //     favouriteCake: listOfFavouriteCake,
         // })
-        console.log(this.state.favouriteCake);
+        console.log(e.target.value);
     }
-
-
 
     render() {
         return (
@@ -43,19 +41,23 @@ class CakeList extends React.Component {
                     {Cakes.map(cake => {
                         return (
                             <div>
-                                <h3>
+                                <h2>
                                     {cake.cakename}
-                                </h3>
+                                </h2>
                                 <img src={cake.cakeimg} width="150" height="150" alt="cake" />
-                                <button onClick = {this.handlefavouritecake} value={cake.cakename}> Add this cake </button>
+                                <button onClick={this.handlefavouritecake} value={cake.cakename} > Add this cake </button>
                             </div>
                         )
                     })}
+
+
                     <UserSeletedCakes />
                 </div>
             </div>
         )
     }
+
 }
+
 
 export default CakeList;
