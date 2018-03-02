@@ -20,7 +20,7 @@ class CakeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            favouriteCake: [,]
+            favouriteCake: []
         }
     }
 
@@ -30,7 +30,7 @@ class CakeList extends React.Component {
         // this.setState({
         //     favouriteCake: listOfFavouriteCake,
         // })
-        console.log(e.target.value);
+        console.log(listOfFavouriteCake);
     }
 
     render() {
@@ -45,13 +45,10 @@ class CakeList extends React.Component {
                                     {cake.cakename}
                                 </h2>
                                 <img src={cake.cakeimg} width="150" height="150" alt="cake" />
-                                <button onClick={this.handlefavouritecake} value={cake.cakename} > Add this cake </button>
+                                <button onClick={this.handlefavouritecake} value={cake} > Add this cake </button>
                             </div>
                         )
                     })}
-
-
-                    <UserSeletedCakes />
                 </div>
             </div>
         )

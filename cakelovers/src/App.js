@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import CakeList from './Components/CakeList';
-
+import UserSeletedCakes from '../src/Components/UserSeletedCakes';
 
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
           <CakeList />
+          <UserSeletedCakes />
         </p>
       </div>
     );
