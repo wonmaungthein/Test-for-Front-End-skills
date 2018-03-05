@@ -1,22 +1,15 @@
 import React from 'react';
+import { Component, Fragment } from "react";
+import CakeList  from "./CakeList";
 
-export class Button extends React.Component {
-
-
-    handlefavouritecake = (e) => {
-
-        alert ( 'Do something'  )
-        // e.preventDefault();
-        // const listOfFavouriteCake = this.state.favouriteCake.push(e.target.value);
-        // this.setState({
-        //     favouriteCake: listOfFavouriteCake,
-        // })
-        // console.log(listOfFavouriteCake);
-    }
-
+export class Button extends Component {
     render() {
         return (
-            <button> Add this cake to my Favourite list </button>
+            <Fragment>
+                <button> Add this cake to my Favourite list </button>
+                <CakeList/>
+            </Fragment>
         )
     }
 }
+

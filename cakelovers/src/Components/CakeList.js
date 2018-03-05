@@ -4,6 +4,7 @@ import React from 'react';
 import Cakelist from '../Components/Cakelist.css';
 import UserSeletedCakes from '../Components/UserSeletedCakes';
 import { Button } from './Button';
+import { Fragment } from "react";
 
 const cakeListstyle = {
     background: 'yellow'
@@ -33,7 +34,7 @@ class CakeList extends React.Component {
 
     handlefavouritecake = (e) => {
 
-        alert ( Cakes.cakename )
+        alert(Cakes.cakename)
         // e.preventDefault();
         // const listOfFavouriteCake = this.state.favouriteCake.push(e.target.value);
         // this.setState({
@@ -44,22 +45,25 @@ class CakeList extends React.Component {
 
     render() {
         return (
-            <div className="cakeList" style={cakeListstyle}>
-                <h1 > Here is the cake list </h1>
-                <div>
-                    {Cakes.map(cake => {
-                        return (
-                            <div>
-                                <h2>
-                                    {cake.cakename}
-                                </h2>
-                                <img src={cake.cakeimg} width="150" height="150" alt="cake" />
-                                <Button onClick={this.handlefavouritecake}/>
-                            </div>
-                        )
-                    })}
+            <Fragment>
+                <div className="cakeList" style={cakeListstyle}>
+                    <h1 > Here is the cake list </h1>
+                    <div>
+                        {Cakes.map(cake => {
+                            return (
+                                <div>
+                                    <h2>
+                                        {cake.cakename}
+                                    </h2>
+                                    <img src={cake.cakeimg} width="150" height="150" alt="cake" />
+                                    <Button onClick={this.handlefavouritecake} />
+                                </div>
+
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
+            </Fragment>
         )
     }
 
