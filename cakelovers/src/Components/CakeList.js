@@ -3,6 +3,13 @@ import React from 'react';
 // import chocolate from '../../src/chocolate.jpg';
 import Cakelist from '../Components/Cakelist.css';
 import UserSeletedCakes from '../Components/UserSeletedCakes';
+import { Button } from './Button';
+
+const cakeListstyle = {
+    background: 'yellow'
+    /* margin-left: 15rem; */
+    /* margin-right: 15rem; */
+}
 
 const Cakes = [
     {
@@ -25,17 +32,19 @@ class CakeList extends React.Component {
     }
 
     handlefavouritecake = (e) => {
-        e.preventDefault();
-        const listOfFavouriteCake = this.state.favouriteCake.push(e.target.value);
+
+        alert ( Cakes.cakename )
+        // e.preventDefault();
+        // const listOfFavouriteCake = this.state.favouriteCake.push(e.target.value);
         // this.setState({
         //     favouriteCake: listOfFavouriteCake,
         // })
-        console.log(listOfFavouriteCake);
+        // console.log(listOfFavouriteCake);
     }
 
     render() {
         return (
-            <div className="cakeList">
+            <div className="cakeList" style={cakeListstyle}>
                 <h1 > Here is the cake list </h1>
                 <div>
                     {Cakes.map(cake => {
@@ -45,7 +54,7 @@ class CakeList extends React.Component {
                                     {cake.cakename}
                                 </h2>
                                 <img src={cake.cakeimg} width="150" height="150" alt="cake" />
-                                <button onClick={this.handlefavouritecake} value={cake} > Add this cake </button>
+                                <Button onClick={this.handlefavouritecake}/>
                             </div>
                         )
                     })}

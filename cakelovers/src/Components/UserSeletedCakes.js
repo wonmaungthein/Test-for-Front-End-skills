@@ -23,6 +23,9 @@ class UserSeletedCakes extends React.Component {
             <div>
                 <h1> This is the list where the user will store favourite cakes </h1>
                 <img src={this.props.src} alt={this.props.alt} />
+                <div>
+                    {}
+                </div>
             </div>
 
         )
