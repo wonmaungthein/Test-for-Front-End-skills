@@ -5,7 +5,8 @@ import Cakelist from '../Components/Cakelist.css';
 import UserSeletedCakes from '../Components/UserSeletedCakes';
 import { Button } from './Button';
 import { Fragment } from "react";
-import Cakes from './cakes.json';
+
+
 
 const cakeListstyle = {
     background: 'yellow'
@@ -18,9 +19,16 @@ class CakeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            favouriteCake: []
+            cakes: []
         }
     }
+
+    componentDidMount (){
+        fetch('http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes')
+        .then(resp => resp.json())
+        .then(cakes => this.setState({cakes}));
+    }
+
 
 
     // handlefavouritecake = (e) => {
@@ -40,7 +48,7 @@ class CakeList extends React.Component {
                 <div className="cakeList" style={cakeListstyle}>
                     <h1 > Here is the cake list </h1>
                     <div>
-                        {Cakes.map(cake => {
+                        {this.state.cakes.map(cake => {
                             return (
                                 <div key={cake.id}>
                                     <h2>
