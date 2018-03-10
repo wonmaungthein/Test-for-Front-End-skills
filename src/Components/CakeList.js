@@ -32,16 +32,17 @@ class CakeList extends React.Component {
         }
     }
 
-    handlefavouritecake = (e) => {
 
-        alert(Cakes.cakename)
+    // handlefavouritecake = (e) => {
+
+        // alert(Cakes.cakename)
         // e.preventDefault();
         // const listOfFavouriteCake = this.state.favouriteCake.push(e.target.value);
         // this.setState({
         //     favouriteCake: listOfFavouriteCake,
         // })
         // console.log(listOfFavouriteCake);
-    }
+    // }
 
     render() {
         return (
@@ -56,7 +57,7 @@ class CakeList extends React.Component {
                                         {cake.cakename}
                                     </h2>
                                     <img src={cake.cakeimg} width="150" height="150" alt="cake" />
-                                    <Button onClick={this.handlefavouritecake} />
+                                    <Button />
                                 </div>
 
                             )
