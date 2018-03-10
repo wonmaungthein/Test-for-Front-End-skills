@@ -5,6 +5,7 @@ import Cakelist from '../Components/Cakelist.css';
 import UserSeletedCakes from '../Components/UserSeletedCakes';
 import { Button } from './Button';
 import { Fragment } from "react";
+import Cakes from './cakes.json';
 
 const cakeListstyle = {
     background: 'yellow'
@@ -12,17 +13,6 @@ const cakeListstyle = {
     /* margin-right: 15rem; */
 }
 
-const Cakes = [
-    {
-        cakename: 'Carrot cake',
-        cakeimg: '/carrotcake.jpg'
-    },
-    {
-        cakename: 'Chocolate Cake',
-        cakeimg: '/chocolate.jpg'
-    },
-
-]
 
 class CakeList extends React.Component {
     constructor(props) {
@@ -52,11 +42,11 @@ class CakeList extends React.Component {
                     <div>
                         {Cakes.map(cake => {
                             return (
-                                <div>
+                                <div key={cake.id}>
                                     <h2>
-                                        {cake.cakename}
+                                        {cake.name}
                                     </h2>
-                                    <img src={cake.cakeimg} width="150" height="150" alt="cake" />
+                                    <img src={cake.imageUrl} width="150" height="150" alt="cake" />
                                     <Button />
                                 </div>
 

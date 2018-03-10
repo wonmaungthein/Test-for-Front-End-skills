@@ -1,7 +1,7 @@
 import React from 'react';
-import { Component, Fragement } from 'react';
+import { Component} from 'react';
 
-class UserSeletedCakes extends React.Component {
+class UserSeletedCakes extends Component {
     render(props) {
         return (
             <div>    
