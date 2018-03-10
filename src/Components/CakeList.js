@@ -1,17 +1,12 @@
 import React from 'react';
-// import carrotcake from '../../src/carrotcake.jpg';
-// import chocolate from '../../src/chocolate.jpg';
 import Cakelist from '../Components/Cakelist.css';
 import UserSeletedCakes from '../Components/UserSeletedCakes';
 import { Button } from './Button';
 import { Fragment } from "react";
 
 
-
 const cakeListstyle = {
-    background: 'yellow'
-    /* margin-left: 15rem; */
-    /* margin-right: 15rem; */
+    background: 'yellow' 
 }
 
 
@@ -21,6 +16,7 @@ class CakeList extends React.Component {
         this.state = {
             cakes: []
         }
+        // this.cakehandler = this.cakehandler.bind(this);
     }
 
     componentDidMount (){
@@ -29,18 +25,10 @@ class CakeList extends React.Component {
         .then(cakes => this.setState({cakes}));
     }
 
+    firstCake = (cakes) => {
+        this.state.cake[0]
 
-
-    // handlefavouritecake = (e) => {
-
-        // alert(Cakes.cakename)
-        // e.preventDefault();
-        // const listOfFavouriteCake = this.state.favouriteCake.push(e.target.value);
-        // this.setState({
-        //     favouriteCake: listOfFavouriteCake,
-        // })
-        // console.log(listOfFavouriteCake);
-    // }
+    }
 
     render() {
         return (
@@ -54,8 +42,8 @@ class CakeList extends React.Component {
                                     <h2>
                                         {cake.name}
                                     </h2>
-                                    <img src={cake.imageUrl} width="150" height="150" alt="cake" />
-                                    <Button />
+                                    <img src={cake.imageUrl} width="250" height="250" alt="cake" />
+                                    <Button onClick ={this.props.firstCake}/>
                                 </div>
 
                             )
